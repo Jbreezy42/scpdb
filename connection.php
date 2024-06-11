@@ -7,7 +7,7 @@
      $connection = new mysqli('localhost', $user, $pw, $db);
      
      //create variable to store records from our database table
-     $Records = $connection->prepare("select * from scpdatabase");
+     $Records = $connection->prepare("select * from scpdatabase ORDER BY Item ASC");
      //run sql query
      $Records->execute();
      //store result of query
