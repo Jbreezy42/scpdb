@@ -19,17 +19,26 @@
     </head>
   <body class= "container">
       <?php include "connection.php";?>
-     
-      <div>
-          <ul class="nav navbar-expand-lg navbar-dark bg-dark">
-              <li class="nav-item active">
-                <a href="create.php" class="nav-link text-light">Add New Record</a>
-              </li>
-              <?php foreach($Result as $link): ?>
-                <a href="index.php?link='<?php echo $link['Item']; ?>'" class="nav-link text-light"><?php echo $link['Item']; ?></a>
-              <?php endforeach; ?>
-          </ul>
-      </div>
+
+    <nav class="nav navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                    <a href="create.php" class="nav-link">Add New Record</a>
+                  </li>
+                  <?php foreach($Result as $link): ?>
+                    <li class="nav-item mx-3 active"><a href="index.php?link='<?php echo $link['Item']; ?>'" class="nav-link"><?php echo $link['Item']; ?></a></li>
+                  <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
       
       <!--HEADER-->
       <br><br>
